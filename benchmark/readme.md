@@ -16,7 +16,7 @@ for example,
 ```
 python config -m Town04
 ```
-3. run benchmark.py; by default, this script will load and run improved model
+3. run run_imit_agent.py; by default, this script will load and run improved model
 
 ```
 python run_imit_agent.py
