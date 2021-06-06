@@ -10,8 +10,8 @@ make sure $PYTHONPATH is set in right path, and unzipped carla_dist.egg file on 
 
 ## simple descriptions; to get more info, please see Readme.md in each folder
 - benchmark : to run benchmark 
-- carla : after copying files from CARLA/PythonAPI/carla/*, overwrite files in this carla
-- collector : to collect data, use this folder
+- carla : after copying files from CARLA/PythonAPI/carla/*, overwrite files in this carla folder
+- collector : to collect data
 - imit_agent : to test trained model
 - train : train the model
 
