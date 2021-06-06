@@ -1,5 +1,6 @@
 # end-to-end-self-driving-cars
 nvidia's end to end learning for self-driving cars implemented on carla
+![image](https://github.com/phoi5675/end-to-end-self-driving-cars/blob/master/image/preview.gif)
 
 final project for deep learning class(EI4446)
 
