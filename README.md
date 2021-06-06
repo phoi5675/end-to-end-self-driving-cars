@@ -47,6 +47,10 @@ i7-9700 or higher
 - imit_agent : to test trained model
 - train : train the model
 
+## sample data
+- [original model](https://drive.google.com/drive/folders/1CrHNkHjoEk-9fVKXaDUqwJxEaGSVFZeT?usp=sharing)
+- [improved model]()
+
 ## acknowledgments
 - base code for benchmark, collector and imit_agent : [carla simulator](https://github.com/carla-simulator/carla), [imitation learning](https://github.com/phoi5675/carlaIL)
 - data collecting method(insert noise to steer) : [End-to-end Driving via Conditional Imitation Learning](https://arxiv.org/abs/1710.02410)
