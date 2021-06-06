@@ -9,6 +9,11 @@ to run carla simulator, see [Carla Simulator tutorial](https://carla.readthedocs
 
 make sure $PYTHONPATH is set in right path, and unzipped carla_dist.egg file on $PYTHONPATH
 
+## requirements
+there's compatibility issue with .csv file and h5py 3.x. use h5py 2.x instead
+```
+pip install -r requirements.txt
+```
 ## simple descriptions; to get more info, please see Readme.md in each folder
 - benchmark : to run benchmark 
 - carla : after copying files from CARLA/PythonAPI/carla/*, overwrite files in this carla folder
