@@ -1,7 +1,7 @@
 # Description
 a simple benchmark program for trained model.
 
-this benchmark will run 10 tests, each test ends when the vehicle collides with obstacles;traffic lights, guardrails, etc...
+this benchmark will run test for 10 times, each test ends when the vehicle collides with obstacles;traffic lights, guardrails, etc...
 
 it will calculate moved distance in meters, and the result will be printed when all test is finished.
 
