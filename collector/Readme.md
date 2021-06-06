@@ -12,7 +12,9 @@ in Recorder.py
 ## how to change image size, image processing
 change code FrontCamera._parse_image in game_collector.py
 
-default image size is 800 * 600
+default image size is 400 * 200, maximum image size is 800 * 600
+
+if you want to change maximum size, change sensor input size
 
 ## keyboard settings
 - c : change weather
