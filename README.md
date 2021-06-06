@@ -49,7 +49,7 @@ i7-9700 or higher
 
 ## sample data
 - [original model](https://drive.google.com/drive/folders/1CrHNkHjoEk-9fVKXaDUqwJxEaGSVFZeT?usp=sharing)
-- [improved model]()
+- [improved model](https://drive.google.com/drive/folders/1FOzG1RVdTvcwa3yuZUEhOXOnEJr3jgoc?usp=sharing)
 
 ## acknowledgments
 - base code for benchmark, collector and imit_agent : [carla simulator](https://github.com/carla-simulator/carla), [imitation learning](https://github.com/phoi5675/carlaIL)
