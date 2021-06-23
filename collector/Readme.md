@@ -25,6 +25,13 @@ if you want to change maximum size, change sensor input size
 - F1 : toggle help
 
 # How to run
+if you don't have "output" folder, make folder named "output" by
+```
+mkdir output
+```
+
+
+to collect data,
 ```
 python data_collector.py
 ```
