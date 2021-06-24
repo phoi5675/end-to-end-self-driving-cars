@@ -48,8 +48,9 @@ i7-9700 or higher
 - train : train the model
 
 ## sample data
-- [original model](https://drive.google.com/drive/folders/1CrHNkHjoEk-9fVKXaDUqwJxEaGSVFZeT?usp=sharing)
-- [improved model](https://drive.google.com/drive/folders/1FOzG1RVdTvcwa3yuZUEhOXOnEJr3jgoc?usp=sharing)
+- modified model and train code are inside original data / model folder
+- [original data / model](https://drive.google.com/open?id=1HUc-qh8GhgP5oksl1-9sPUmJiVRhdtg4)
+- [steer noise injected data / model](https://drive.google.com/open?id=1FOzG1RVdTvcwa3yuZUEhOXOnEJr3jgoc)
 
 ## acknowledgments
 - base code for benchmark, collector and imit_agent : [carla simulator](https://github.com/carla-simulator/carla), [imitation learning](https://github.com/phoi5675/carlaIL)
