@@ -71,7 +71,7 @@ class ImitAgent(Agent):
         self._grp = None
 
         self._image_cut = image_cut
-        self._image_size = (88, 200, 3)
+        self._image_size = (200, 400, 3)
 
         config_gpu = tf.ConfigProto()  # tf 설정 프로토콜인듯?
         config_gpu.gpu_options.per_process_gpu_memory_fraction = 0.25  # memory_fraction % 만큼만 gpu vram 사용
@@ -153,32 +153,17 @@ class ImitAgent(Agent):
 
         rgb_image.convert(cc.Raw)
 
-        image_cut = [230, 480, 160, 640]
-        image_resize = (200, 400, 3)
-        w = image_resize[1]
-        h = image_resize[0]
-
-        src = np.float32([[0, 0], [w, 0], [0, h], [w, h]])
-        dst = np.float32([[100, 0], [300, 0], [0, h], [w, h]])
-        M = cv2.getPerspectiveTransform(dst, src)
-        if not self:
-            return
-
-        # carla.Image 를 기존 manual_control.py.CameraManager._parse_image() 부분을 응용
-        rgb_image.convert(cc.Raw)
         array = np.frombuffer(rgb_image.raw_data, dtype=np.dtype("uint8"))
         array = np.reshape(array, (rgb_image.height, rgb_image.width, 4))
-        array = array[image_cut[0]:image_cut[1], image_cut[2]:image_cut[3], :3]  # 필요 없는 부분을 잘라내고
-        array = array[:, :, ::-1]  # 채널 색상 순서 변경? 안 하면 색 이상하게 출력
+        array = array[self._image_cut[0]:self._image_cut[1], :, :3]  # 필요 없는 부분을 잘라내고
+        # array = array[:, :, ::-1]  # 채널 색상 순서 변경? 안 하면 색 이상하게 출력
 
         image_pil = Image.fromarray(array.astype('uint8'), 'RGB')
-        image_pil = image_pil.resize((image_resize[1], image_resize[0]))  # 원하는 크기로 리사이즈
-        # image_pil.save('output/%06d.png' % image.frame)
-        np_image = np.array(image_pil, dtype=np.dtype("uint8"))
+        image_pil = image_pil.resize((self._image_size[1], self._image_size[0]))  # 원하는 크기로 리사이즈
+        image_input = np.array(image_pil, dtype=np.dtype("uint8"))
 
-        # bird-eye view transform
-        # https://nikolasent.github.io/opencv/2017/05/07/Bird%27s-Eye-View-Transformation.html
-        image_input = cv2.warpPerspective(np_image, M, (w, h))
+        image_input = image_input.astype(np.float32)
+        # image_input = np.multiply(image_input, 1.0 / 255.0)
 
         # Control() 대신 VehicleControl() 으로 변경됨 (0.9.X 이상)
         control = carla.VehicleControl()
